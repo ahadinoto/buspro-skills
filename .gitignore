@@ -1,0 +1,4 @@
+# Generated web-chat bundles — rebuild with tools/build-web-prompt.py
+dist/
+
+.DS_Store
