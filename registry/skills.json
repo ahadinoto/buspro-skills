@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/build-registry.py",
+  "categories": [
+    {
+      "id": "hiring",
+      "label": "Hiring",
+      "status": "available"
+    },
+    {
+      "id": "process-analysis",
+      "label": "Process analysis",
+      "status": "planned"
+    },
+    {
+      "id": "project-management",
+      "label": "Project management",
+      "status": "available"
+    },
+    {
+      "id": "appsheet",
+      "label": "AppSheet",
+      "status": "planned"
+    },
+    {
+      "id": "communication",
+      "label": "Communication",
+      "status": "planned"
+    }
+  ],
+  "skills": [
+    {
+      "id": "interview-prep",
+      "name": "Interview Prep",
+      "description": "Prepare candidate-specific interview questions from a CV, hiring role, and interviewer priorities; offer concise live follow-ups. Use for interviewer preparation, not candidate rehearsal or a generic question bank.",
+      "version": "1.2.0",
+      "category": "hiring",
+      "tags": [
+        "hiring",
+        "interviews"
+      ],
+      "path": "skills/hiring/interview-prep",
+      "modes": [
+        "document"
+      ],
+      "requires": [
+        "read supplied CV text"
+      ],
+      "optional": [
+        "PDF/OCR tools for image-only CVs"
+      ],
+      "companions": [],
+      "renamedFrom": [
+        "candidate-interview-coach"
+      ]
+    },
+    {
+      "id": "progress-reporter",
+      "name": "Progress Reporter",
+      "description": "Draft stand-ups, show-and-tells, progress comments, IPM updates, and weekly reports from live Basecamp activity plus the user’s account. Use to report existing work, not to plan or author todos. Posting requires user authorization.",
+      "version": "2.3.0",
+      "category": "project-management",
+      "tags": [
+        "project-management",
+        "communication",
+        "Basecamp"
+      ],
+      "path": "skills/project-management/progress-reporter",
+      "modes": [
+        "live"
+      ],
+      "requires": [
+        "Basecamp CLI",
+        "authenticated read access"
+      ],
+      "optional": [
+        "Basecamp write scope for posting"
+      ],
+      "companions": [
+        "todo-planner"
+      ],
+      "renamedFrom": [
+        "basecamp-initiative-reporter"
+      ]
+    },
+    {
+      "id": "todo-planner",
+      "name": "Todo Planner",
+      "description": "Plan and review Basecamp todos, epics, project context, and discovery deliverables using the team readiness gate and 11-field format. Use for work quality and structure; use progress-reporter for progress updates.",
+      "version": "3.3.0",
+      "category": "project-management",
+      "tags": [
+        "project-management",
+        "Basecamp"
+      ],
+      "path": "skills/project-management/todo-planner",
+      "modes": [
+        "paste",
+        "live"
+      ],
+      "requires": [],
+      "optional": [
+        "Basecamp CLI and authentication for live access"
+      ],
+      "companions": [
+        "progress-reporter"
+      ],
+      "renamedFrom": [
+        "basecamp-todo-coach"
+      ]
+    }
+  ]
+}

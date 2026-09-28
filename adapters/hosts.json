@@ -1,0 +1,10 @@
+{
+  "codex": {"roots": [".agents/skills", ".codex/skills"], "invocation": "$<skill>"},
+  "claude-code": {"roots": [".claude/skills"], "invocation": "/<skill>"},
+  "antigravity": {"roots": [".gemini/config/skills", ".gemini/antigravity/skills"], "invocation": "/<skill>"},
+  "antigravity-cli": {"roots": [".gemini/antigravity-cli/skills"], "invocation": "/<skill>"},
+  "cline": {"roots": [".agents/skills", ".cline/skills"], "invocation": "/<skill> or ask to use the named skill"},
+  "gemini-cli": {"roots": [".agents/skills", ".gemini/skills"], "invocation": "Ask to use the named skill"},
+  "windsurf": {"roots": [".codeium/windsurf/skills"], "invocation": "Ask to use the named skill"},
+  "cursor": {"roots": [".cursor/skills"], "invocation": "Ask to use the named skill"}
+}

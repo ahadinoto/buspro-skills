@@ -1,0 +1,213 @@
+{
+  "title": "Todo Planner",
+  "paste_header": "You are running in **Paste Mode**: these bundles provide no Basecamp CLI or live\nwrite integration. Work from the Basecamp content and documents the user supplies;\nnever claim to have scanned or posted anything. Resolve the project before drafting;\nask only if it is missing. Pasted current Basecamp scope, status and people take\npriority over older background documents. Label unavailable or unconfirmed facts.\nThe readiness gate and 11-field format apply unchanged. Return drafts for the user\nto use; do not offer to execute Basecamp writes from this assistant.\n\nTwo knowledge files accompany these instructions. **Examples** contains worked\ncases. **Reference** contains {reference_holds}, including any workflow guidance\nplaced there. Read the relevant section before choosing a workflow or drafting.\n",
+  "examples": "references/examples.md",
+  "fallback_target": "gem-compact",
+  "ref_labels": {
+    "references/formats.md": "the format templates",
+    "references/todo-types.md": "the per-type todo reference and tip material",
+    "references/deliverable-review.md": "the deliverable-review checklist",
+    "SKILL.md": "the workflow selection guidance"
+  },
+  "always_replace": {
+    "`references/examples.md`": "the uploaded examples knowledge file",
+    "`references/basecamp-cli.md`": "the Basecamp CLI (unavailable in this mode)",
+    "`references/project-registry.md`": "the project registry (unavailable in this mode — ask the user which project)",
+    "`references/local-context.md`": "the project's local folder (unavailable in this mode)"
+  },
+  "tokens": {
+    "`references/formats.md`": [
+      "references/formats.md",
+      {
+        "instructions": "the format templates in these instructions",
+        "reference": "the Formats section of the uploaded reference file",
+        "both": "the format templates in these instructions (uploaded reference file for the rest)"
+      }
+    ],
+    "`todo-types.md`": [
+      "references/todo-types.md",
+      {
+        "instructions": "the todo-type reference in these instructions",
+        "reference": "the Todo Types section of the uploaded reference file",
+        "both": "the todo-type reference in these instructions (uploaded reference file for the rest)"
+      }
+    ],
+    "`references/todo-types.md`": [
+      "references/todo-types.md",
+      {
+        "instructions": "the todo-type reference in these instructions",
+        "reference": "the Todo Types section of the uploaded reference file",
+        "both": "the todo-type reference in these instructions (uploaded reference file for the rest)"
+      }
+    ],
+    "`references/deliverable-review.md`": [
+      "references/deliverable-review.md",
+      {
+        "instructions": "the deliverable-review checklist in these instructions",
+        "reference": "the Deliverable Review section of the uploaded reference file",
+        "both": "the deliverable-review checklist in these instructions (uploaded reference file for the rest)"
+      }
+    ]
+  },
+  "targets": {
+    "gem": {
+      "label": "Gemini Gem / Claude web Project",
+      "limit": 25000,
+      "hard_limit": false,
+      "instructions": [
+        [
+          "SKILL.md",
+          "*",
+          [
+            "Operating Modes — Preflight",
+            "Which project? Resolve it first",
+            "Getting Context",
+            "Writing to Basecamp",
+            "Companion skills"
+          ]
+        ],
+        [
+          "references/formats.md",
+          "*",
+          []
+        ]
+      ],
+      "reference": [
+        [
+          "references/todo-types.md",
+          "*",
+          []
+        ],
+        [
+          "references/deliverable-review.md",
+          "*",
+          []
+        ]
+      ],
+      "exclude": {
+        "SKILL.md": {
+          "Operating Modes — Preflight": "The Paste Mode header establishes the unavailable live connection.",
+          "Which project? Resolve it first": "The Paste Mode header resolves supplied project context without a filesystem registry.",
+          "Getting Context": "The Paste Mode header replaces live reads with supplied evidence and retains source priority.",
+          "Writing to Basecamp": "This distribution produces drafts only and has no write integration.",
+          "Companion skills": "Native skill installation and invocation are not available inside this browser bundle."
+        }
+      }
+    },
+    "gem-compact": {
+      "label": "Gemini Gem — compact fallback",
+      "limit": 15000,
+      "hard_limit": true,
+      "instructions": [
+        [
+          "SKILL.md",
+          "*",
+          [
+            "Operating Modes — Preflight",
+            "Which project? Resolve it first",
+            "Getting Context",
+            "Writing to Basecamp",
+            "Companion skills"
+          ]
+        ],
+        [
+          "references/formats.md",
+          [
+            "2. Individual Todo Format"
+          ],
+          []
+        ]
+      ],
+      "reference": [
+        [
+          "references/formats.md",
+          [
+            "1. Project Starter Context",
+            "3. Epic / Todo List",
+            "4. Todo Groups (status)",
+            "5. Backlog Health Summary"
+          ],
+          []
+        ],
+        [
+          "references/todo-types.md",
+          "*",
+          []
+        ],
+        [
+          "references/deliverable-review.md",
+          "*",
+          []
+        ]
+      ],
+      "exclude": {
+        "SKILL.md": {
+          "Operating Modes — Preflight": "The Paste Mode header establishes the unavailable live connection.",
+          "Which project? Resolve it first": "The Paste Mode header resolves supplied project context without a filesystem registry.",
+          "Getting Context": "The Paste Mode header replaces live reads with supplied evidence and retains source priority.",
+          "Writing to Basecamp": "This distribution produces drafts only and has no write integration.",
+          "Companion skills": "Native skill installation and invocation are not available inside this browser bundle."
+        }
+      }
+    },
+    "gpt": {
+      "label": "ChatGPT Custom GPT",
+      "limit": 8000,
+      "hard_limit": true,
+      "instructions": [
+        [
+          "SKILL.md",
+          [
+            "Role",
+            "Basecamp Operating Model",
+            "Readiness Rule (core)",
+            "Todo Title Rule",
+            "Review Mode & Readiness Check",
+            "Completion Claims",
+            "Output Style"
+          ],
+          []
+        ]
+      ],
+      "reference": [
+        [
+          "SKILL.md",
+          [
+            "Workflows"
+          ],
+          []
+        ],
+        [
+          "references/formats.md",
+          "*",
+          []
+        ],
+        [
+          "references/todo-types.md",
+          "*",
+          []
+        ],
+        [
+          "references/deliverable-review.md",
+          "*",
+          []
+        ]
+      ],
+      "exclude": {
+        "SKILL.md": {
+          "Operating Modes — Preflight": "The Paste Mode header establishes the unavailable live connection.",
+          "Which project? Resolve it first": "The Paste Mode header resolves supplied project context without a filesystem registry.",
+          "Getting Context": "The Paste Mode header replaces live reads with supplied evidence and retains source priority.",
+          "Writing to Basecamp": "This distribution produces drafts only and has no write integration.",
+          "Companion skills": "Native skill installation and invocation are not available inside this browser bundle."
+        }
+      }
+    }
+  },
+  "coverage_files": [
+    "SKILL.md",
+    "references/formats.md",
+    "references/todo-types.md",
+    "references/deliverable-review.md"
+  ]
+}
